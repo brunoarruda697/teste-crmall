@@ -19,9 +19,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllCharacters(): Observable<any>{
-    console.log('chamou a request');
-    return this.httpClient.get<any>(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`)
-    .pipe(map((data: any) => data));
+  public getAllCharacters() {
+    return this.httpClient.get(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`);
   }
 }
