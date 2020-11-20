@@ -1,5 +1,5 @@
 {
-  "/v1/*": {
+  "/v1/public": {
     "target": "https://gateway.marvel.com",
     "changeOrigin": true,
     "secure": false

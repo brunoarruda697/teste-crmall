@@ -14,7 +14,7 @@ export class PageCardComponent implements OnInit {
   }
 
   checkRequiredFields() {
-    if(!this.name) {
+    if (!this.name) {
       throw new Error('attribute name is required');
     }
  }
