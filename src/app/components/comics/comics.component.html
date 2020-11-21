@@ -1,0 +1,31 @@
+<app-page-card
+  name="Comics"
+  searchPlaceholder="Title"
+  [paginator]="paginator"
+  (search)="onSearch($event)"
+  (pageEvent)="onPageChanged($event)"
+>
+  <div class="loading"  *ngIf="loading">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+  <div fxFlex fxLayout="column">
+    <div fxLayout="row wrap" *ngIf="!loading">
+      <div
+        fxFlex="25"
+        fxFlex.md="33"
+        fxFlex.sm="50"
+        fxFlex.xs="100"
+        fxLayout="column"
+        *ngFor="let comic of allComics"
+        style="padding: 5px;"
+      >
+        <mat-card>
+          <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+          <mat-card-title>
+            {{comic.title}}
+          </mat-card-title>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</app-page-card>
