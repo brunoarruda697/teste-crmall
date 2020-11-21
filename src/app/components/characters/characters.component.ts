@@ -44,7 +44,7 @@ export class CharactersComponent implements OnInit {
     let params: object;
     params = {
       limit: page.pageSize,
-      offset: ((page.pageIndex + 1) - 1) * page.pageSize,
+      offset: page.pageIndex * page.pageSize,
     };
     this.getCharacters(params);
   }
