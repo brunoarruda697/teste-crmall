@@ -5,6 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -15,6 +18,9 @@ import { MatListModule } from '@angular/material/list';
     MatCheckboxModule,
     MatListModule,
     FormsModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatPaginatorModule,
   ],
   exports: [
     MatButtonModule,
@@ -24,6 +30,9 @@ import { MatListModule } from '@angular/material/list';
     MatCheckboxModule,
     MatListModule,
     FormsModule,
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatPaginatorModule,
   ]
 })
 export class MaterialModule {}
