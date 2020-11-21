@@ -29,15 +29,11 @@ export class CharactersComponent implements OnInit {
   }
 
   onSearch(value: string) {
-    let params: object;
-    params = {
-      nameStartsWith: value,
-    };
     if (!value) {
       this.getCharacters();
       return;
     }
-    this.getCharacters(params);
+    this.getCharacters({ nameStartsWith: value });
   }
 
   onPageChanged(page) {
