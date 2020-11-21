@@ -21,8 +21,9 @@
       >
         <mat-card>
           <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
-          <mat-card-title>
+          <mat-card-title class="card-title">
             {{comic.title}}
+            <mat-checkbox [color]="'primary'"></mat-checkbox>
           </mat-card-title>
         </mat-card>
       </div>

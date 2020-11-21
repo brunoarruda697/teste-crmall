@@ -20,10 +20,13 @@ export class ComicsComponent implements OnInit {
 
   getComics(params?: object) {
     this.loading = true;
-    this.marvelApi.getAllComics(params).subscribe((data: any) => {
+    this.marvelApi.getAllComics(params).subscribe((response: any) => {
+      const { data } = response;
       this.loading = false;
-      this.allComics = data.data.results;
-      const { results, ...dataInformations } = data.data;
+      this.allComics = data.results;
+      let tenPercent = this.getNumberFromPercentage(10, data.total);
+      console.log(tenPercent, '10% do total');
+      const { results, ...dataInformations } = data;
       this.paginator = dataInformations;
     });
   }
@@ -38,5 +41,9 @@ export class ComicsComponent implements OnInit {
 
   onPageChanged(page) {
     this.getComics({ titleStartsWith: page.search, limit: page.pageSize, offset: page.pageIndex * page.pageSize });
+  }
+
+  getNumberFromPercentage(percentage, total) {
+    return Math.round((percentage / 100) * total);
   }
 }

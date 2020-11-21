@@ -32,14 +32,8 @@ export class PageCardComponent implements OnInit {
   }
 
   onPage(event: Event) {
-    console.log(event, 'onpageevent');
-    let obj: object;
-    obj = {
-      pageIndex: event['pageIndex'],
-      pageSize: event['pageSize'],
-      search: this.searchValue,
-    };
-    // edit event mandando search value
-    this.pageEvent.emit(obj);
+    const pageIndex = 'pageIndex';
+    const pageSize = 'pageSize';
+    this.pageEvent.emit({ pageIndex: event[pageIndex], pageSize: event[pageSize], search: this.searchValue });
   }
 }

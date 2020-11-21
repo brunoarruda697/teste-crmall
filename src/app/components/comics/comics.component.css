@@ -2,3 +2,8 @@ img.mat-card-image {
   min-height: 450px;
   max-height: 450px;
 }
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+}
