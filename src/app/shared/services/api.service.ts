@@ -19,7 +19,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAllCharacters() {
-    return this.httpClient.get(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`);
+  public getAllCharacters(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
 }
