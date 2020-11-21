@@ -37,11 +37,6 @@ export class CharactersComponent implements OnInit {
   }
 
   onPageChanged(page) {
-    let params: object;
-    params = {
-      limit: page.pageSize,
-      offset: page.pageIndex * page.pageSize,
-    };
-    this.getCharacters(params);
+    this.getCharacters({ limit: page.pageSize, offset: page.pageIndex * page.pageSize });
   }
 }
