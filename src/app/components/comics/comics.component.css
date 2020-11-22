@@ -3,7 +3,17 @@ img.mat-card-image {
   max-height: 450px;
 }
 
+.mat-card {
+  min-height: -webkit-fill-available;
+}
+
 .card-title {
   display: flex;
   justify-content: space-between;
+}
+
+.rare {
+  border: 3px solid goldenrod;
+  border-radius: 1px;
+  color: goldenrod;
 }

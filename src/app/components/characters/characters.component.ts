@@ -37,6 +37,10 @@ export class CharactersComponent implements OnInit {
   }
 
   onPageChanged(page) {
+    if (!page.search) {
+      this.getCharacters({ limit: page.pageSize, offset: page.pageIndex * page.pageSize });
+      return;
+    }
     this.getCharacters({ nameStartsWith: page.search, limit: page.pageSize, offset: page.pageIndex * page.pageSize });
   }
 }

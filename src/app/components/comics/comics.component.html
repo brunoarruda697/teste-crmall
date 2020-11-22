@@ -19,7 +19,7 @@
         *ngFor="let comic of allComics"
         style="padding: 5px;"
       >
-        <mat-card>
+        <mat-card [ngClass]="comic.isRare ? 'rare' : ''">
           <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
           <mat-card-title class="card-title">
             {{comic.title}}
