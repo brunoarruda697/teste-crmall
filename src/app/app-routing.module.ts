@@ -1,3 +1,4 @@
+import { CreatorsComponent } from './components/creators/creators.component';
 import { DetailsComponent } from './components/comics/details/details.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { CharactersComponent } from './components/characters/characters.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'comics/:id',
     component: DetailsComponent,
+  },
+  {
+    path: 'creators',
+    component: CreatorsComponent,
   },
   {
     path: '**',
