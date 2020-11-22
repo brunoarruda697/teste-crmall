@@ -22,4 +22,12 @@ export class ApiService {
   public getAllCharacters(params?) {
     return this.httpClient.get(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
+
+  public getAllComics(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/comics?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getComic(id) {
+    return this.httpClient.get(`${this.BASE_URL}/comics/${id}?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`);
+  }
 }

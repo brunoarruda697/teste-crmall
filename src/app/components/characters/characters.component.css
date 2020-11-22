@@ -3,9 +3,6 @@ img.mat-card-image {
   max-height: 374px;
 }
 
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.mat-card {
+  min-height: -webkit-fill-available;
 }

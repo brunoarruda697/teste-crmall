@@ -18,7 +18,7 @@ export class CharactersComponent implements OnInit {
     this.getCharacters();
   }
 
-  getCharacters(params?: object) {
+  getCharacters(params?: object): void {
     this.loading = true;
     this.marvelApi.getAllCharacters(params).subscribe((data: any) => {
       this.loading = false;
@@ -28,7 +28,7 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  onSearch(value: string) {
+  onSearch(value: string): void {
     if (!value) {
       this.getCharacters();
       return;
@@ -36,7 +36,11 @@ export class CharactersComponent implements OnInit {
     this.getCharacters({ nameStartsWith: value });
   }
 
-  onPageChanged(page) {
-    this.getCharacters({ limit: page.pageSize, offset: page.pageIndex * page.pageSize });
+  onPageChanged(page: any): void {
+    if (!page.search) {
+      this.getCharacters({ limit: page.pageSize, offset: page.pageIndex * page.pageSize });
+      return;
+    }
+    this.getCharacters({ nameStartsWith: page.search, limit: page.pageSize, offset: page.pageIndex * page.pageSize });
   }
 }

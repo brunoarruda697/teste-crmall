@@ -1,0 +1,55 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>
+      <button mat-mini-fab color="primary" (click)="back()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div
+      class="loading"
+      *ngIf="loading"
+    >
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div fxFlex fxLayout="column">
+      <div fxLayout="row wrap" *ngIf="!loading">
+        <div
+          fxFlex="25"
+          fxFlex.md="50"
+          fxFlex.sm="50"
+          fxFlex.xs="50"
+        >
+          <img
+            mat-card-image
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+          >
+        </div>
+        <div
+          fxFlex="25"
+          fxFlex.md="50"
+          fxFlex.sm="50"
+          fxFlex.xs="50"
+        >
+          <h1>{{comic.title}}</h1>
+          <div>
+            <h2>Published:</h2>
+            <div>{{comic.dates[0].date | date}}</div>
+          </div>
+          <br>
+          <div>
+            <h2>Writers:</h2>
+            <div *ngFor="let creator of comic.creators.items">{{creator.name}}</div>
+          </div>
+          <br>
+          <div>
+            <h1>Prices:</h1>
+            <div class="currency" *ngFor="let price of comic.prices">{{price.price | currency}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
