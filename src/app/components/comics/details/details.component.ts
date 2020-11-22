@@ -1,6 +1,7 @@
 import { ApiService } from './../../../shared/services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -8,17 +9,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  comic = { title: '', thumbnail: { path: '', extension: ''}, dates: []};
+  comic = {
+    title: '',
+    thumbnail: {
+      path: '',
+      extension: ''
+    },
+    dates: [],
+    prices: [],
+    creators: { items: []}
+  };
   loading: boolean;
   id: any;
-  constructor(private marvelApi: ApiService, private activatedRoute: ActivatedRoute) { }
+
+  constructor(
+    private marvelApi: ApiService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.getComic(this.id);
   }
 
-  getComic(id) {
+  getComic(id: any): void {
     this.loading = true;
     this.marvelApi.getComic(id).subscribe((response: any) => {
       const { data } = response;
@@ -26,5 +41,9 @@ export class DetailsComponent implements OnInit {
       this.comic = data.results[0];
       console.log(this.comic);
     });
+  }
+
+  back(): void {
+    this.router.navigate(['/comics']);
   }
 }
