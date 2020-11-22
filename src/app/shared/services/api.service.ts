@@ -31,7 +31,11 @@ export class ApiService {
     return this.httpClient.get(`${this.BASE_URL}/comics/${id}?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`);
   }
 
-  public getCreators(params?) {
+  public getAllCreators(params?) {
     return this.httpClient.get(`${this.BASE_URL}/creators?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllEvents(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/events?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
 }
