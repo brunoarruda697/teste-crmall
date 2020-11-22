@@ -1,3 +1,4 @@
+import { DetailsComponent } from './components/comics/details/details.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { MaterialModule } from './material.module';
@@ -18,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     CharactersComponent,
     ComicsComponent,
+    DetailsComponent,
     PageCardComponent,
   ],
   imports: [

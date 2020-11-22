@@ -1,6 +1,7 @@
 img.mat-card-image {
   min-height: 450px;
   max-height: 450px;
+  cursor: pointer;
 }
 
 .mat-card {

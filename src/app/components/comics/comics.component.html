@@ -5,7 +5,10 @@
   (search)="onSearch($event)"
   (pageEvent)="onPageChanged($event)"
 >
-  <div class="loading"  *ngIf="loading">
+  <div
+    class="loading"
+    *ngIf="loading"
+  >
     <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
   </div>
   <div fxFlex fxLayout="column">
@@ -20,7 +23,12 @@
         style="padding: 5px;"
       >
         <mat-card [ngClass]="comic.isRare ? 'rare' : ''">
-          <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+          <img
+            mat-card-image
+            src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"
+            alt="{{comic.title}}"
+            routerLink="{{comic.id}}"
+          >
           <mat-card-title class="card-title">
             {{comic.title}}
             <mat-checkbox [color]="'primary'"></mat-checkbox>
