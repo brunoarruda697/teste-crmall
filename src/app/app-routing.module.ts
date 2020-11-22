@@ -1,3 +1,4 @@
+import { EventsComponent } from './components/events/events.component';
 import { CreatorsComponent } from './components/creators/creators.component';
 import { DetailsComponent } from './components/comics/details/details.component';
 import { ComicsComponent } from './components/comics/comics.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'creators',
     component: CreatorsComponent,
+  },
+  {
+    path: 'events',
+    component: EventsComponent,
   },
   {
     path: '**',
