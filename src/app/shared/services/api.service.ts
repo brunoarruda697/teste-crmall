@@ -38,4 +38,8 @@ export class ApiService {
   public getAllEvents(params?) {
     return this.httpClient.get(`${this.BASE_URL}/events?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
+
+  public getAllSeries(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/series?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
 }
