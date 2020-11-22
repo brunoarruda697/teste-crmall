@@ -1,3 +1,4 @@
+import { CreatorsComponent } from './components/creators/creators.component';
 import { DetailsComponent } from './components/comics/details/details.component';
 import { ComicsComponent } from './components/comics/comics.component';
 import { CharactersComponent } from './components/characters/characters.component';
@@ -20,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CharactersComponent,
     ComicsComponent,
     DetailsComponent,
+    CreatorsComponent,
     PageCardComponent,
   ],
   imports: [

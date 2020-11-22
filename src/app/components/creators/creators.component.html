@@ -1,0 +1,34 @@
+<app-page-card
+  name="Creators"
+  searchPlaceholder="Name"
+  [paginator]="paginator"
+  (search)="onSearch($event)"
+  (pageEvent)="onPageChanged($event)"
+>
+  <div class="loading"  *ngIf="loading">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+  <div fxFlex fxLayout="column">
+    <div fxLayout="row wrap" *ngIf="!loading">
+      <div
+        fxFlex="25"
+        fxFlex.md="33"
+        fxFlex.sm="50"
+        fxFlex.xs="100"
+        fxLayout="column"
+        *ngFor="let creator of allCreators"
+        style="padding: 5px;"
+      >
+        <mat-card>
+          <img mat-card-image src="{{creator.thumbnail.path}}.{{creator.thumbnail.extension}}" alt="{{creator.name}}">
+          <mat-card-title>
+            {{creator.fullName}}
+          </mat-card-title>
+          <mat-card-footer>
+            <a href="{{creator.urls[0].url}}" target="_blank" fxFlex mat-flat-button color="primary">Detalhes</a>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</app-page-card>
