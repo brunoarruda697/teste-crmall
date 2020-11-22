@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Md5 } from 'ts-md5';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +39,9 @@ export class ApiService {
 
   public getAllSeries(params?) {
     return this.httpClient.get(`${this.BASE_URL}/series?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllStories(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/stories?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
 }

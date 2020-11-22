@@ -1,3 +1,4 @@
+import { StoriesComponent } from './components/stories/stories.component';
 import { SeriesComponent } from './components/series/series.component';
 import { EventsComponent } from './components/events/events.component';
 import { CreatorsComponent } from './components/creators/creators.component';
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CreatorsComponent,
     EventsComponent,
     SeriesComponent,
+    StoriesComponent,
     PageCardComponent,
   ],
   imports: [
