@@ -7,9 +7,9 @@ de uma forma diferente, por fim acabei aplicando o cupom de desconto na hora de 
 
 * Dificuldades:
 - Eu tentei implementar um HttpInterceptor pra adicionar a key da marvel antes das requisições porém eu estava tendo problemas com CORS mesmo utilizando proxy, fiquei horas
-tentando resolver mas não encontrei nenhuma forma portanto fiz de outra forma.
+tentando resolver mas não encontrei nenhuma solução portanto fiz de outra forma.
 
-#############################################################################################
+########################################################################################
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
