@@ -28,13 +28,13 @@
         *ngFor="let serie of allSeries"
         style="padding: 5px;"
       >
-        <mat-card>
+        <mat-card class="flex-card">
           <img
             mat-card-image
             src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}"
             alt="{{serie.title}}"
           >
-          <mat-card-title>
+          <mat-card-title style="flex: 1;">
             {{serie.title}}
           </mat-card-title>
           <mat-card-footer>

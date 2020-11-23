@@ -16,6 +16,11 @@ html {
   min-height: -webkit-fill-available;
 }
 
+.flex-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
 img.mat-card-image {
   min-height: 374px;
   max-height: 374px;
