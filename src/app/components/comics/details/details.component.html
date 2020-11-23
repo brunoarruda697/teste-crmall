@@ -1,7 +1,11 @@
 <mat-card class="card">
   <mat-card-header>
     <mat-card-title>
-      <button mat-mini-fab color="primary" (click)="back()">
+      <button
+        mat-mini-fab
+        color="primary"
+        (click)="back()"
+      >
         <mat-icon>arrow_back</mat-icon>
       </button>
     </mat-card-title>
@@ -13,8 +17,14 @@
     >
       <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
     </div>
-    <div fxFlex fxLayout="column">
-      <div fxLayout="row wrap" *ngIf="!loading">
+    <div
+      fxFlex
+      fxLayout="column"
+    >
+      <div
+        fxLayout="row wrap"
+        *ngIf="!loading"
+      >
         <div
           fxFlex="25"
           fxFlex.md="50"
@@ -46,7 +56,12 @@
           <br>
           <div>
             <h1>Prices:</h1>
-            <div class="currency" *ngFor="let price of comic.prices">{{price.price | currency}}</div>
+            <div
+              class="currency"
+              *ngFor="let price of comic.prices"
+            >
+              {{price.price | currency}}
+            </div>
           </div>
         </div>
       </div>

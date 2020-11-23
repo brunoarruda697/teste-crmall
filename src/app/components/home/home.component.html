@@ -4,28 +4,78 @@
   </button>
   <span>Teste Crmall</span>
   <span class="spacer"></span>
-  <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon matBadge="{{comicsArray.length}}" matBadgeColor="warn">shopping_cart</mat-icon>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon
+      matBadge="{{comicsArray.length}}"
+      matBadgeColor="warn"
+    >
+      shopping_cart
+    </mat-icon>
   </button>
-  <mat-menu #menu="matMenu" class="cart">
+  <mat-menu
+    #menu="matMenu"
+    class="cart"
+  >
     <div fxLayout="column">
       <h1>
         Total: {{totalPrice | currency}}
       </h1>
-      <button mat-flat-button color="primary">Buy</button>
+      <button
+        mat-flat-button
+        color="primary"
+      >
+        Buy
+      </button>
     </div>
   </mat-menu>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav mode="side" opened #sidenav>
+  <mat-sidenav
+    mode="side"
+    opened
+    #sidenav
+  >
     <mat-nav-list>
-      <a mat-list-item routerLink='/characters'>Characters</a>
-      <a mat-list-item routerLink='/comics'>Comics</a>
-      <a mat-list-item routerLink='/creators'>Creators</a>
-      <a mat-list-item routerLink='/events'>Events</a>
-      <a mat-list-item routerLink='/series'>Series</a>
-      <a mat-list-item routerLink='/stories'>Stories</a>
+      <a
+        mat-list-item
+        routerLink='/characters'
+      >
+        Characters
+      </a>
+      <a
+        mat-list-item
+        routerLink='/comics'
+      >
+        Comics
+      </a>
+      <a
+        mat-list-item
+        routerLink='/creators'
+      >
+        Creators
+      </a>
+      <a
+        mat-list-item
+        routerLink='/events'
+      >
+        Events
+      </a>
+      <a
+        mat-list-item
+        routerLink='/series'
+      >
+        Series
+      </a>
+      <a
+        mat-list-item
+        routerLink='/stories'
+      >
+        Stories
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

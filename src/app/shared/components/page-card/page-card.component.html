@@ -3,7 +3,11 @@
     <mat-card-title>{{name}}
       <mat-form-field class="ml-3">
         <mat-label>Search</mat-label>
-        <input matInput (keyup.enter)="onEnter($event.target.value)" placeholder="{{searchPlaceholder}}">
+        <input
+          matInput
+          (keyup.enter)="onEnter($event.target.value)"
+          placeholder="{{searchPlaceholder}}"
+        >
       </mat-form-field>
     </mat-card-title>
   </mat-card-header>
