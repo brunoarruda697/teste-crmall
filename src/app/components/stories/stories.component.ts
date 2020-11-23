@@ -24,7 +24,6 @@ export class StoriesComponent implements OnInit {
     this.loading = true;
     this.marvelApi.getAllStories(params).subscribe((response: any) => {
       const { data } = response;
-      console.log(data);
       this.loading = false;
       this.allStories = data.results;
       const { results, ...dataInformations } = data;

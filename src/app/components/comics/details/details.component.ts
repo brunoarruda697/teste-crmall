@@ -40,7 +40,6 @@ export class DetailsComponent implements OnInit {
       const { data } = response;
       this.loading = false;
       this.comic = data.results[0];
-      console.log(this.comic);
     });
   }
 
