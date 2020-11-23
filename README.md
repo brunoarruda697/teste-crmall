@@ -11,6 +11,9 @@ tentando resolver mas não encontrei nenhuma solução portanto fiz de outra for
 
 ########################################################################################
 
+## Npm install
+Run `npm install` for installing all dependencies.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
