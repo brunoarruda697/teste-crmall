@@ -5,6 +5,7 @@ import { Md5 } from 'ts-md5';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   private BASE_URL = 'https://gateway.marvel.com/v1/public';
   private md5 = new Md5();

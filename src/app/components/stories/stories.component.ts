@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './stories.component.html',
   styleUrls: ['./stories.component.css']
 })
+
 export class StoriesComponent implements OnInit {
   allStories: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };

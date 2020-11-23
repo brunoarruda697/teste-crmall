@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './creators.component.html',
   styleUrls: ['./creators.component.css']
 })
+
 export class CreatorsComponent implements OnInit {
   allCreators: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };

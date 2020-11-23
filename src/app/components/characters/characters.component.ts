@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.css']
 })
+
 export class CharactersComponent implements OnInit {
   allCharacters: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };

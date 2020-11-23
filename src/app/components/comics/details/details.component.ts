@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
+
 export class DetailsComponent implements OnInit {
   comic = {
     title: '',

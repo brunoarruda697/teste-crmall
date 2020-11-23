@@ -1,7 +1,6 @@
 import { MockCupomService } from './../../shared/services/mock-cupom.service';
 import { OrderService } from './../../shared/services/order.service';
 import { ApiService } from './../../shared/services/api.service';
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './comics.component.html',
   styleUrls: ['./comics.component.css']
 })
+
 export class ComicsComponent implements OnInit {
   allComics = [];
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };
@@ -88,5 +88,4 @@ export class ComicsComponent implements OnInit {
   getDiscount(value, percentage) {
     return value - (value * (percentage / 100));
   }
-
 }

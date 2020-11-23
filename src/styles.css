@@ -12,6 +12,15 @@ html {
   background: transparent;
 }
 
+.mat-card {
+  min-height: -webkit-fill-available;
+}
+
+img.mat-card-image {
+  min-height: 374px;
+  max-height: 374px;
+}
+
 .loading {
   display: flex;
   align-items: center;
