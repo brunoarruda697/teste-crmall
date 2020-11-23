@@ -1,3 +1,4 @@
+import { MockCupomService } from './../../shared/services/mock-cupom.service';
 import { OrderService } from './../../shared/services/order.service';
 import { ApiService } from './../../shared/services/api.service';
 import { Observable } from 'rxjs';
@@ -12,11 +13,19 @@ export class ComicsComponent implements OnInit {
   allComics = [];
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };
   loading: boolean;
+  cupoms: any;
 
-  constructor(private marvelApi: ApiService, private orderService: OrderService) { }
+  constructor(
+    private marvelApi: ApiService,
+    private orderService: OrderService,
+    private mockCupomService: MockCupomService,
+  ) { }
 
   ngOnInit(): void {
     this.getComics();
+    this.mockCupomService.getAllCupoms().then(({data}) => {
+      this.cupoms = data.data;
+    });
   }
 
   getComics(params?: object) {
@@ -69,6 +78,15 @@ export class ComicsComponent implements OnInit {
 
   onCheck(comic, event) {
     const { checked } = event;
+    if (checked) {
+      const cupom = comic.isRare ? this.cupoms.filter(item => item.isRare) : this.cupoms.filter(item => !item.isRare);
+      comic.prices[0].price = this.getDiscount(comic.prices[0].price, cupom[0].discount);
+    }
     this.orderService.selectComic(comic, checked);
   }
+
+  getDiscount(value, percentage) {
+    return value - (value * (percentage / 100));
+  }
+
 }

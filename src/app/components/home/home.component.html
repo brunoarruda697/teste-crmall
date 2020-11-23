@@ -7,13 +7,12 @@
   <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu">
     <mat-icon matBadge="{{comicsArray.length}}" matBadgeColor="warn">shopping_cart</mat-icon>
   </button>
-  <mat-menu #menu="matMenu">
+  <mat-menu #menu="matMenu" class="cart">
     <div fxLayout="column">
-      <div>
-        Total price: {{totalPrice}}
-      </div>
-      <div>teste2</div>
-      <div>teste3</div>
+      <h1>
+        Total: {{totalPrice | currency}}
+      </h1>
+      <button mat-flat-button color="primary">Buy</button>
     </div>
   </mat-menu>
 </mat-toolbar>
