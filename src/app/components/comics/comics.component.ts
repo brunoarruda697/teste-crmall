@@ -1,3 +1,4 @@
+import { OrderService } from './../../shared/services/order.service';
 import { ApiService } from './../../shared/services/api.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ export class ComicsComponent implements OnInit {
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };
   loading: boolean;
 
-  constructor(private marvelApi: ApiService) { }
+  constructor(private marvelApi: ApiService, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.getComics();
@@ -64,5 +65,10 @@ export class ComicsComponent implements OnInit {
       this.allComics = this.allComics.filter(item => item !== rand);
     }
     return newArray;
+  }
+
+  onCheck(comic, event) {
+    const { checked } = event;
+    this.orderService.selectComic(comic, checked);
   }
 }

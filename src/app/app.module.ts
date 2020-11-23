@@ -1,3 +1,4 @@
+import { OrderService } from './shared/services/order.service';
 import { StoriesComponent } from './components/stories/stories.component';
 import { SeriesComponent } from './components/series/series.component';
 import { EventsComponent } from './components/events/events.component';
@@ -38,7 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

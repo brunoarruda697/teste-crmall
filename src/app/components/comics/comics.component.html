@@ -31,7 +31,7 @@
           >
           <mat-card-title class="card-title">
             {{comic.title}}
-            <mat-checkbox [color]="'primary'"></mat-checkbox>
+            <mat-checkbox [color]="'primary'" (change)="onCheck(comic, $event)"></mat-checkbox>
           </mat-card-title>
         </mat-card>
       </div>
