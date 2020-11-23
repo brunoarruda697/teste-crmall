@@ -1,10 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-page-card',
   templateUrl: './page-card.component.html',
   styleUrls: ['./page-card.component.css']
 })
+
 export class PageCardComponent implements OnInit {
   @Input() name: string;
   @Input() searchPlaceholder: string;

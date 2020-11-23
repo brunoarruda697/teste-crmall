@@ -1,4 +1,3 @@
-import { MockCupomService } from './../../shared/services/mock-cupom.service';
 import { OrderService } from './../../shared/services/order.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   comic: any;
   comicsArray: any[];

@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
+
 export class EventsComponent implements OnInit {
   allEvents: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };

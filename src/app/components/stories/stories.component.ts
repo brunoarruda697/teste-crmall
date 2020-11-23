@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   templateUrl: './stories.component.html',
   styleUrls: ['./stories.component.css']
 })
+
 export class StoriesComponent implements OnInit {
   allStories: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };
@@ -23,7 +24,6 @@ export class StoriesComponent implements OnInit {
     this.loading = true;
     this.marvelApi.getAllStories(params).subscribe((response: any) => {
       const { data } = response;
-      console.log(data);
       this.loading = false;
       this.allStories = data.results;
       const { results, ...dataInformations } = data;

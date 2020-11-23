@@ -1,12 +1,3 @@
-img.mat-card-image {
-  min-height: 374px;
-  max-height: 374px;
-}
-
-.mat-card {
-  min-height: -webkit-fill-available;
-}
-
 table {
   width: 100%;
 }

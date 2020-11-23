@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
+
 export class DetailsComponent implements OnInit {
   comic = {
     title: '',
@@ -39,7 +40,6 @@ export class DetailsComponent implements OnInit {
       const { data } = response;
       this.loading = false;
       this.comic = data.results[0];
-      console.log(this.comic);
     });
   }
 

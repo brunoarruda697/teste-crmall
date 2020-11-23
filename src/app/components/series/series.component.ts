@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './series.component.html',
   styleUrls: ['./series.component.css']
 })
+
 export class SeriesComponent implements OnInit {
   allSeries: Observable<any>;
   paginator: object = { limit: 5, total: '', count: 5, offset: 0 };
