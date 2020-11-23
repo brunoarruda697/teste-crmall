@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Md5 } from 'ts-md5';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +19,29 @@ export class ApiService {
 
   public getAllCharacters(params?) {
     return this.httpClient.get(`${this.BASE_URL}/characters?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllComics(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/comics?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getComic(id) {
+    return this.httpClient.get(`${this.BASE_URL}/comics/${id}?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`);
+  }
+
+  public getAllCreators(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/creators?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllEvents(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/events?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllSeries(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/series?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
+  }
+
+  public getAllStories(params?) {
+    return this.httpClient.get(`${this.BASE_URL}/stories?ts=1&apikey=${this.API_KEY}&hash=${this.HASH}`, { params });
   }
 }

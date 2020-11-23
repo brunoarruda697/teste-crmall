@@ -1,3 +1,10 @@
+import { OrderService } from './shared/services/order.service';
+import { StoriesComponent } from './components/stories/stories.component';
+import { SeriesComponent } from './components/series/series.component';
+import { EventsComponent } from './components/events/events.component';
+import { CreatorsComponent } from './components/creators/creators.component';
+import { DetailsComponent } from './components/comics/details/details.component';
+import { ComicsComponent } from './components/comics/comics.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { MaterialModule } from './material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +23,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AppComponent,
     HomeComponent,
     CharactersComponent,
+    ComicsComponent,
+    DetailsComponent,
+    CreatorsComponent,
+    EventsComponent,
+    SeriesComponent,
+    StoriesComponent,
     PageCardComponent,
   ],
   imports: [
@@ -26,7 +39,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

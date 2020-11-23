@@ -1,0 +1,40 @@
+.card {
+  margin: 1em;
+  height: 70%;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+img.mat-card-image {
+  min-height: 450px;
+  max-height: 450px;
+  min-width: 300px;
+  max-width: 300px;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0px 0px !important;
+}
+
+h2 {
+  margin: 0px 0px;
+}
+
+.currency {
+  font-size: 50px;
+  font-weight: bold;
+}

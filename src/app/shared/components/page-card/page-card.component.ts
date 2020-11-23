@@ -12,6 +12,7 @@ export class PageCardComponent implements OnInit {
   @Output() search = new EventEmitter<string>();
   @Output() pageEvent = new EventEmitter<any>();
   pageSizeOptions: number[] = [5, 10, 20];
+  searchValue: string;
 
   constructor() { }
 
@@ -26,10 +27,13 @@ export class PageCardComponent implements OnInit {
   }
 
   onEnter(value: string) {
+    this.searchValue = value;
     this.search.emit(value);
   }
 
   onPage(event: Event) {
-    this.pageEvent.emit(event);
+    const pageIndex = 'pageIndex';
+    const pageSize = 'pageSize';
+    this.pageEvent.emit({ pageIndex: event[pageIndex], pageSize: event[pageSize], search: this.searchValue });
   }
 }
